@@ -59,13 +59,13 @@ jobs:
         uses: appleboy/scp-action@v0.1.7
         with:
           host: 192.168.7.97
-          username: dshan
-          password: kpassoks
+          username: 'dshan'
+          password: 'kpassoks'
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          source: "*.jar"
-          target: ~/cicd
+          source: '*.jar'
+          target: '~/cicd'
           debug: true
         
           
