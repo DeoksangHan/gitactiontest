@@ -60,8 +60,8 @@ jobs:
         with:
           host: 192.168.7.97
           username: 'dshan'
-          password: 'kpassoks'
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # password: 'kpassoks'
+          # key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           source: '*.jar'
