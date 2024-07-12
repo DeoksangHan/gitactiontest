@@ -48,16 +48,23 @@ jobs:
         with:
           name: cicdsample
       - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.4
+        # uses: webfactory/ssh-agent@v0.5.4
         # with:
         #   ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
         # uses: actions/checkout@v4
         # Make sure the @v0.9.0 matches the current version of the action
         # uses: webfactory/ssh-agent@v0.9.0
+        # with:
+        #   ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        uses: appleboy/scp-action@v0.1.7
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-
+          host: 192.168.7.97
+          username: dshan
+          password: kpassoks
+          port: 22
+          source: "*.jar"
+          target: ~/cicd
+        
           
-      - name: SCP transfer
-        run: scp *.jar dshan@192.168.7.97:~/cicd
+      # - name: SCP transfer
+      #   run: scp *.jar dshan@192.168.7.97:~/cicd
