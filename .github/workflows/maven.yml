@@ -46,4 +46,4 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: SCP transfer
-        run: scp *.jar dshan@192.168.7.97:~/cicd
+        run: scp target/*.jar dshan@192.168.7.97:~/cicd
